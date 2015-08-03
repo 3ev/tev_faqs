@@ -1,4 +1,4 @@
-#TYPO3 FAQS Extension
+#TYPO3 FAQs Extension
 
 [![Latest Stable Version](https://poser.pugx.org/3ev/tev_faqs/version)](https://packagist.org/packages/3ev/tev_faqs) [![License](https://poser.pugx.org/3ev/tev_faqs/license)](https://packagist.org/packages/3ev/tev_faqs)
 
