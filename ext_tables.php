@@ -10,7 +10,7 @@ if (!defined('TYPO3_MODE')) {
     'Tev.' . $_EXTKEY,
     'FaqCategory',
     'FAQs Plugin',
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('tev_glossary') . 'ext_icon.png'
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('tev_faqs') . 'ext_icon.png'
 );
 
 // Register the wizard icon
