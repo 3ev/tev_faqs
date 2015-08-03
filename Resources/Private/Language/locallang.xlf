@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" product-name="tev_faqs" date="2015-08-03T00:00:00+01:00">
+        <header/>
+        <body>
+            <trans-unit id="tev_faqs.plugin.faqcategory.title">
+                <source>FAQs Plugin</source>
+            </trans-unit>
+            <trans-unit id="tev_faqs.plugin.faqcategory.description">
+                <source>Show the list of FAQ Categories and FAQs.</source>
+            </trans-unit>
+            <trans-unit id="tev_faqs.category.show.no_faqs_found">
+                <source>No FAQs found in category.</source>
+            </trans-unit>
+            <trans-unit id="tev_faqs.category.show.category_not_found">
+                <source>Category not found.</source>
+            </trans-unit>
+            <trans-unit id="tev_faqs.category.show.back_to_top">
+                <source>Back to top ^</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-sm-4">
+        <nav class="list-group tev-faqs-category-nav">
+            <f:for each="{categories}" as="cat">
+                <a class="list-group-item {f:if(condition: '{cat.uid} == {categoryUid}', then: 'active')}" href="{f:uri.action(arguments: {category: '{cat.uid}'})}">
+                    {cat.title}
+                </a>
+            </f:for>
+        </nav>
+    </div>
+
+    <div class="col-sm-8">
+        <f:if condition="{category}">
+            <f:then>
+                <h2 class="tev-faqs-category-title">{category.title}</h2>
+
+                <f:if condition="{f:count(subject: '{faqs}')}">
+                    <f:then>
+                        <ul class="tev-faqs-question-nav">
+                            <f:for each="{faqs}" as="faq">
+                                <li>
+                                    <a href="{url}#faq-question-{faq.uid}">{faq.question}</a>
+                                </li>
+                            </f:for>
+                        </ul>
+
+                        <hr />
+
+                        <dl class="tev-faqs-list">
+                            <f:for each="{faqs}" as="faq">
+                                <dt id="faq-question-{faq.uid}">{faq.question}</dt>
+                                <dd>{faq.answer}</dd>
+                            </f:for>
+                        </dl>
+
+                        <a href="{url}#" class="tev-faqs-back-to-top">
+                            <f:translate key="tev_faqs.category.show.back_to_top" />
+                        </a>
+                    </f:then>
+                    <f:else>
+                        <p class="tev-faqs-not-found">
+                            <f:translate key="tev_faqs.category.show.no_faqs_found" />
+                        </p>
+                    </f:else>
+                </f:if>
+            </f:then>
+            <f:else>
+                <p class="tev-faqs-category-not-found">
+                    <f:translate key="tev_faqs.category.show.category_not_found" />
+                </p>
+            </f:else>
+        </f:if>
+    </div>
+</div>
