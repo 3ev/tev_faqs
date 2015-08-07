@@ -31,7 +31,7 @@ class CategoryController extends ActionController
      */
     public function showAction()
     {
-        if (!$this->request->hasArgument('category')) {
+        if (!$this->request->hasArgument('category') || !strlen($this->request->getArgument('category'))) {
             $category = $this->categoryRepository->findDefault();
         } else {
             $category = $this->categoryRepository->findByUid($this->request->getArgument('category'));
