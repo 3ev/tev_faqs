@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row tev-faqs">
     <div class="col-sm-4">
-        <nav class="list-group tev-faqs-category-nav">
+        <nav class="list-group tev-faqs__category-nav">
             <f:for each="{categories}" as="cat">
                 <a class="list-group-item {f:if(condition: '{cat.uid} == {categoryUid}', then: 'active')}" href="{f:uri.action(arguments: {category: '{cat.uid}'})}">
                     {cat.title}
@@ -12,11 +12,11 @@
     <div class="col-sm-8">
         <f:if condition="{category}">
             <f:then>
-                <h2 class="tev-faqs-category-title">{category.title}</h2>
+                <h2 class="tev-faqs__category-title">{category.title}</h2>
 
                 <f:if condition="{f:count(subject: '{faqs}')}">
                     <f:then>
-                        <ul class="tev-faqs-question-nav">
+                        <ul class="tev-faqs__question-nav">
                             <f:for each="{faqs}" as="faq">
                                 <li>
                                     <a href="{url}#faq-question-{faq.uid}">{faq.question}</a>
@@ -26,26 +26,26 @@
 
                         <hr />
 
-                        <dl class="tev-faqs-list">
+                        <dl class="tev-faqs__list">
                             <f:for each="{faqs}" as="faq">
                                 <dt id="faq-question-{faq.uid}">{faq.question}</dt>
                                 <dd>{faq.answer}</dd>
                             </f:for>
                         </dl>
 
-                        <a href="{url}#" class="tev-faqs-back-to-top">
+                        <a href="{url}#" class="tev-faqs__back-to-top">
                             <f:translate key="tev_faqs.category.show.back_to_top" />
                         </a>
                     </f:then>
                     <f:else>
-                        <p class="tev-faqs-not-found">
+                        <p class="tev-faqs__not-found">
                             <f:translate key="tev_faqs.category.show.no_faqs_found" />
                         </p>
                     </f:else>
                 </f:if>
             </f:then>
             <f:else>
-                <p class="tev-faqs-category-not-found">
+                <p class="tev-faqs__category-not-found">
                     <f:translate key="tev_faqs.category.show.category_not_found" />
                 </p>
             </f:else>
