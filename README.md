@@ -30,6 +30,26 @@ element easily.
 Checkout the [plugin template](https://github.com/3ev/tev_faqs/blob/master/Resources/Private/Templates/Category/Show.html)
 for more information.
 
+###Overriding Templates
+
+You can fully override any templates in this extension in the normal Extbase way,
+by adding the following Typoscript in your own extension:
+
+```
+plugin.tx_tevfaqs {
+    view {
+        templateRootPaths {
+            # The default index is 0, so use any index from 1 upwards
+
+            1 = EXT:your_ext/Path/To/Template/Overrides/
+        }
+    }
+}
+```
+
+You can do the same for `partialRootPaths` or `layoutRootPaths` too. Any templates
+added to the configured directories will be preferred over the default ones.
+
 ##License
 
 MIT © 3ev
