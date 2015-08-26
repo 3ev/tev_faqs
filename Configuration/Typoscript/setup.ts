@@ -1,7 +1,15 @@
 plugin.tx_tevfaqs {
     view {
-        templateRootPath = {$plugin.tx_tevfaqs.view.templateRootPath}
-        partialRootPath = {$plugin.tx_tevfaqs.view.partialRootPath}
-        layoutRootPath = {$plugin.tx_tevfaqs.view.layoutRootPath}
+        templateRootPaths {
+            0 = {$plugin.tx_tevfaqs.view.templateRootPath}
+        }
+
+        partialRootPaths {
+            0 = {$plugin.tx_tevfaqs.view.partialRootPath}
+        }
+
+        layoutRootPaths {
+            0 = {$plugin.tx_tevfaqs.view.layoutRootPath}
+        }
     }
 }
