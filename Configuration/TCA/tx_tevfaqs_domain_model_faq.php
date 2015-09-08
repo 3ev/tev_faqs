@@ -20,7 +20,12 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'hidden, question, answer, category'
+            'showitem' => '
+                hidden,
+                question,
+                answer;;;richtext:rte_transform[mode=ts],
+                category
+            '
         ]
     ],
     'columns' => [
