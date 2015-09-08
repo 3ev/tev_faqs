@@ -8,7 +8,7 @@ return [
         'tstamp' => 'tstamp',
         'cruser_id' => 'cruser_id',
         'delete' => 'deleted',
-        'default_sortby' => 'ORDER BY title',
+        'sortby' => 'sorting',
         'searchFields' => 'title',
         'enablecolumns' => [
             'disabled' => 'hidden'

@@ -19,6 +19,10 @@ class CategoryRepository extends Repository
         $querySettings = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings');
         $querySettings->setRespectStoragePage(false);
         $this->setDefaultQuerySettings($querySettings);
+
+        $this->defaultOrderings = [
+            'sorting' => QueryInterface::ORDER_ASCENDING
+        ];
     }
 
     /**
@@ -28,7 +32,7 @@ class CategoryRepository extends Repository
      */
     public function findDefault()
     {
-        return $this->findAllOrderedByTitle()->getFirst();
+        return $this->findAll()->getFirst();
     }
 
     /**

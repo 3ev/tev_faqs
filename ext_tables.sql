@@ -10,6 +10,7 @@ CREATE TABLE tx_tevfaqs_domain_model_category (
     cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
     deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
     hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
+    sorting int(11) DEFAULT '0' NOT NULL,
     title varchar(255) DEFAULT '' NOT NULL,
     faqs int(11) unsigned DEFAULT '0' NOT NULL,
 
