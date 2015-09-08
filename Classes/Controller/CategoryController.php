@@ -42,7 +42,7 @@ class CategoryController extends ActionController
         }
 
         return $this->view
-            ->assign('categories', $this->categoryRepository->findAllOrderedByTitle())
+            ->assign('categories', $this->categoryRepository->findAll())
             ->render();
     }
 }
