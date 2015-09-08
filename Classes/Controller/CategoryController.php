@@ -17,14 +17,6 @@ class CategoryController extends ActionController
     protected $categoryRepository;
 
     /**
-     * FAQ repository.
-     *
-     * @var \Tev\TevFaqs\Domain\Repository\FaqRepository
-     * @inject
-     */
-    protected $faqRepository;
-
-    /**
      * Show an individual FAQ category, with a navigation menu for the others.
      *
      * @return string
@@ -41,7 +33,6 @@ class CategoryController extends ActionController
             $this->view
                 ->assign('category', $category)
                 ->assign('categoryUid', $category->getUid())
-                ->assign('faqs', $this->faqRepository->findAllByCategory($category)->toArray())
                 ->assign('url', $this->uriBuilder->getRequest()->getRequestUri())
                 ->render();
         } else {

@@ -14,13 +14,20 @@ return [
             'disabled' => 'hidden'
         ],
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('tev_faqs') . 'ext_icon.png',
+        'dividers2tabs' => 2
     ],
     'interface' => [
         'showRecordFieldList' => 'hidden, title'
     ],
     'types' => [
         '0' => [
-            'showitem' => 'hidden, title'
+            'showitem' => '
+                --div--;Details,
+                hidden,
+                title,
+                --div--;LLL:EXT:tev_faqs/Resources/Private/Language/locallang_tca.xml:tx_tevfaqs_domain_model_category.faqs,
+                faqs
+            '
         ]
     ],
     'columns' => [
@@ -39,6 +46,20 @@ return [
                 'type' => 'input',
                 'size' => '30',
                 'eval' => 'trim, required'
+            ]
+        ],
+        'faqs' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:tev_faqs/Resources/Private/Language/locallang_tca.xml:tx_tevfaqs_domain_model_category.faqs',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tx_tevfaqs_domain_model_faq',
+                'foreign_field' => 'category',
+                'foreign_sortby' => 'sorting',
+                'appearance' => [
+                    'expandSingle' => true,
+                    'newRecordLinkAddTitle' => true
+                ]
             ]
         ]
     ]

@@ -9,6 +9,7 @@
         <languageKey index="default" type="array">
             <label index="tx_tevfaqs_domain_model_category">FAQ Categories</label>
             <label index="tx_tevfaqs_domain_model_category.title">Title</label>
+            <label index="tx_tevfaqs_domain_model_category.faqs">FAQs</label>
             <label index="tx_tevfaqs_domain_model_faq">FAQs</label>
             <label index="tx_tevfaqs_domain_model_faq.question">Question</label>
             <label index="tx_tevfaqs_domain_model_faq.answer">Answer</label>

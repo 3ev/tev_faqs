@@ -14,10 +14,10 @@
             <f:then>
                 <h2 class="tev-faqs__category-title">{category.title}</h2>
 
-                <f:if condition="{f:count(subject: '{faqs}')}">
+                <f:if condition="{f:count(subject: '{category.faqs}')}">
                     <f:then>
                         <ul class="tev-faqs__question-nav">
-                            <f:for each="{faqs}" as="faq">
+                            <f:for each="{category.faqs}" as="faq">
                                 <li>
                                     <a href="{url}#faq-question-{faq.uid}">{faq.question}</a>
                                 </li>
@@ -25,7 +25,7 @@
                         </ul>
 
                         <dl class="tev-faqs__list">
-                            <f:for each="{faqs}" as="faq">
+                            <f:for each="{category.faqs}" as="faq">
                                 <dt id="faq-question-{faq.uid}">{faq.question}</dt>
                                 <dd><f:format.html>{faq.answer}</f:format.html></dd>
                             </f:for>
