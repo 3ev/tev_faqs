@@ -1,6 +1,7 @@
 <?php
 namespace Tev\TevFaqs\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 use Tev\TevFaqs\Domain\Model\Category;
 
@@ -9,15 +10,23 @@ use Tev\TevFaqs\Domain\Model\Category;
  */
 class FaqRepository extends Repository
 {
+
+    /**
+     * Configuration manager.
+     *
+     * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
+     * @inject
+     */
+    protected $cm;
+
+
     /**
      * {@inheritdoc}
      */
     public function initializeObject()
     {
-        // Remove the PID dependency for objects pulled from this repository
-
         $querySettings = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings');
-        $querySettings->setRespectStoragePage(false);
+        $querySettings->setStoragePageIds([$config['persistence']['storagePid']]);
         $this->setDefaultQuerySettings($querySettings);
     }
 
