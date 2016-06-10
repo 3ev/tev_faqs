@@ -12,14 +12,17 @@ $ composer require "3ev/tev_faqs"
 
 ##Usage
 
-Install the TYPO3 extension through the Extension Manager. You'll then be able
-to add FAQ Categories and FAQs from the List View. Each FAQ **must** be categorised
-under a single category. You can add FAQs to any storage folder or page - they
-will be found globally.
+Install the TYPO3 extension through the Extension Manager.
+
+Using the Constants Editor, you should then set the 'TEV_FAQS -> Storage Folder' constant, most likely on your root page template. This will be the main folder that the FAQ Categories and FAQs are stored in.
+
+You'll then be able to add FAQ Categories and FAQs from the List View. Each FAQ **must** be categorised under a single category.
 
 You can then add the FAQs plugin to any page on your site. This plugin will
 display a list of all of the FAQ Categories, with links to the set of the FAQs
 in each category.
+
+You can set the 'Storage Folder' constant on a per page basis if you want a particular page using the FAQs plugin to display a specific set of FAQ categories and FAQs.
 
 ##Styling
 
