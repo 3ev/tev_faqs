@@ -30,6 +30,22 @@ class CategoryRepository extends Repository
     }
 
     /**
+     * Find by UIDs.
+     *
+     * @param array $uids List of UIDs
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResult
+     */
+    public function findByUids($uids)
+    {
+        $query = $this->createQuery();
+        $query->matching(
+            $query->in('uid', $uids)
+        );
+
+        return $query->execute();
+    }
+
+    /**
      * Get all categories, ordered by their title.
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResult
