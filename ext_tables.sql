@@ -11,6 +11,7 @@ CREATE TABLE tx_tevfaqs_domain_model_category (
     deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
     hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
     sorting int(11) DEFAULT '0' NOT NULL,
+    code varchar(255),
     title varchar(255) DEFAULT '' NOT NULL,
     faqs int(11) unsigned DEFAULT '0' NOT NULL,
 
@@ -33,6 +34,7 @@ CREATE TABLE tx_tevfaqs_domain_model_faq (
     deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
     hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
     sorting int(11) DEFAULT '0' NOT NULL,
+    code varchar(255),
     question varchar(255) DEFAULT '' NOT NULL,
     answer text NOT NULL,
     category int(11) unsigned DEFAULT '0' NOT NULL,
