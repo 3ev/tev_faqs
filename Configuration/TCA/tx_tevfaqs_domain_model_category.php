@@ -26,7 +26,8 @@ return [
                 hidden,
                 title,
                 --div--;LLL:EXT:tev_faqs/Resources/Private/Language/locallang_tca.xml:tx_tevfaqs_domain_model_category.faqs,
-                faqs
+                faqs,
+                code
             '
         ]
     ],
@@ -60,6 +61,15 @@ return [
                     'expandSingle' => true,
                     'newRecordLinkAddTitle' => true
                 ]
+            ]
+        ],
+        'code' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:tev_faqs/Resources/Private/Language/locallang_tca.xml:tx_tevfaqs_domain_model_category.code',
+            'config' => [
+                'type' => 'input',
+                'size' => '30',
+                'eval' => 'trim, required'
             ]
         ]
     ]

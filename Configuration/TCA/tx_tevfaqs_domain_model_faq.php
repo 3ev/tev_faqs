@@ -16,7 +16,7 @@ return [
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('tev_faqs') . 'ext_icon.png',
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, question, answer, category'
+        'showRecordFieldList' => 'hidden, question, answer, category, code'
     ],
     'types' => [
         '0' => [
@@ -24,7 +24,8 @@ return [
                 hidden,
                 question,
                 answer;;;richtext:rte_transform[mode=ts],
-                category
+                category,
+                code
             '
         ]
     ],
@@ -62,6 +63,15 @@ return [
                 'minitems' => 0,
                 'maxitems' => 1,
                 'size' => 1
+            ]
+        ],
+        'code' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:tev_faqs/Resources/Private/Language/locallang_tca.xml:tx_tevfaqs_domain_model_category.code',
+            'config' => [
+                'type' => 'input',
+                'size' => '30',
+                'eval' => 'trim, required'
             ]
         ]
     ]
