@@ -10,6 +10,13 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Category extends AbstractEntity
 {
     /**
+     * Code.
+     *
+     * @var string
+     */
+    protected $code;
+
+    /**
      * Title.
      *
      * @var string
@@ -35,6 +42,26 @@ class Category extends AbstractEntity
     public function __construct()
     {
         $this->faqs = new ObjectStorage;
+    }
+
+    /**
+     * Returns the code.
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Sets the code.
+     *
+     * @param  string $code
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
     }
 
     /**

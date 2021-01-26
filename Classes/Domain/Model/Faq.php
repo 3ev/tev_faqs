@@ -9,6 +9,13 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Faq extends AbstractEntity
 {
     /**
+     * Code.
+     *
+     * @var string
+     */
+    protected $code;
+
+    /**
      * Question.
      *
      * @var string
@@ -31,6 +38,26 @@ class Faq extends AbstractEntity
      * @lazy
      */
     protected $category;
+
+    /**
+     * Returns the code.
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Sets the code.
+     *
+     * @param  string $code
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+    }
 
     /**
      * Returns the question.
