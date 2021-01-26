@@ -17,7 +17,7 @@ return [
         'dividers2tabs' => 2
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, title'
+        'showRecordFieldList' => 'hidden, title, faqs, code'
     ],
     'types' => [
         '0' => [
