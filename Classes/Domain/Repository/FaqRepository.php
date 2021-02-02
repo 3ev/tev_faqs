@@ -2,6 +2,7 @@
 namespace Tev\TevFaqs\Domain\Repository;
 
 use TYPO3\CMS\Extbase\Persistence\Repository;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use Tev\TevFaqs\Domain\Model\Category;
 
 /**
@@ -14,6 +15,13 @@ class FaqRepository extends Repository
      */
     public function initializeObject()
     {
+        $querySettings = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings');
+        $querySettings->setRespectStoragePage(false);
+        $this->setDefaultQuerySettings($querySettings);
+
+        $this->defaultOrderings = [
+            'sorting' => QueryInterface::ORDER_ASCENDING
+        ];
     }
 
     /**
