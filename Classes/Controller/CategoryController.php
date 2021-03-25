@@ -23,8 +23,15 @@ class CategoryController extends ActionController
      */
     public function showAction()
     {
+        $selectedCategories = array_filter(explode(',', $this->settings['categories']));
+        if (count($selectedCategories)) {
+            $categories = $this->categoryRepository->findByUids($selectedCategories);
+        } else {
+            $categories = $this->categoryRepository->findAll();
+        }
+
         if (!$this->request->hasArgument('category') || !strlen($this->request->getArgument('category'))) {
-            $category = $this->categoryRepository->findDefault();
+            $category = $categories->getFirst();
         } else {
             $category = $this->categoryRepository->findByUid($this->request->getArgument('category'));
         }
@@ -42,7 +49,7 @@ class CategoryController extends ActionController
         }
 
         return $this->view
-            ->assign('categories', $this->categoryRepository->findAll())
+            ->assign('categories', $categories)
             ->render();
     }
 }

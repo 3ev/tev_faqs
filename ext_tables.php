@@ -19,3 +19,10 @@ if (TYPO3_MODE === 'BE') {
     $TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['Tev\\TevFaqs\\Utility\\WizIcon'] =
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/WizIcon.php';
 }
+
+// Register FluidTYPO3 providers
+
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['tevfaqs_faqcategory'] = 'pi_flexform';
+\FluidTYPO3\Flux\Core::registerConfigurationProvider(
+    'Tev\\TevFaqs\\Provider\\Configuration\\FaqCategoryConfigurationProvider'
+);

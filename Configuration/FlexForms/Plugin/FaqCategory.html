@@ -1,0 +1,30 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace faq=Tev\TevFaqs\ViewHelpers}
+
+
+
+<f:layout name="Default" />
+
+
+
+<f:section name="Configuration">
+    <flux:form id="tev-faqs-plugin-faqcategory" label="Configuration">
+        <flux:form.sheet name="Setup" label="Setup">
+            <flux:field.select
+                name="settings.categories"
+                label="FAQ categories to show (Leave empty to show all)"
+                items="{faq:category()}"
+                minItems="0"
+                maxItems="100"
+                multiple="0"
+                size="5"
+            />
+        </flux:form.sheet>
+    </flux:form>
+</f:section>
+
+
+
+<f:section name="Preview">
+    <p><strong>FAQ Plugin</strong></p>
+</f:section>
