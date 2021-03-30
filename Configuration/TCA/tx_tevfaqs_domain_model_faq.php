@@ -65,14 +65,5 @@ return [
                 'size' => 1
             ]
         ],
-        'code' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:tev_faqs/Resources/Private/Language/locallang_tca.xml:tx_tevfaqs_domain_model_faq.code',
-            'config' => [
-                'type' => 'input',
-                'size' => '30',
-                'eval' => 'trim, required'
-            ]
-        ]
     ]
 ];
