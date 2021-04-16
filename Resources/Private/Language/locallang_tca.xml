@@ -15,7 +15,6 @@
             <label index="tx_tevfaqs_domain_model_faq.question">Question</label>
             <label index="tx_tevfaqs_domain_model_faq.answer">Answer</label>
             <label index="tx_tevfaqs_domain_model_faq.category">FAQ Category</label>
-            <label index="tx_tevfaqs_domain_model_faq.code">Code</label>
         </languageKey>
     </data>
 </T3locallang>
